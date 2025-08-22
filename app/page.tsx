@@ -10,42 +10,42 @@ const services=[
     id:1,
     icon: Truck,
     color: "bg-gradient-to-t from-black to-orange-800",
-    image:'/img2.jpeg',
+    image:'/img2.webp',
     title:'Transporte Nacional',
   },
   {
     id:2,
     icon: PackageCheck,
     color: "bg-gradient-to-t from-black to-blue-800",
-    image: '/img9.jpeg',
+    image: '/img9.webp',
     title: 'Transporte Carga Especial',
   },
   {
     id:3,
     icon: ShieldCheck,
     color: "bg-gradient-to-t from-black to-green-800",
-    image: '/img6.jpeg',
+    image: '/img6.webp',
     title: 'Seguro de Carga',
   },
   {
     id:4,
     icon: UserCheck,
     color: "bg-gradient-to-t from-black to-violet-800",
-    image:'/img11.jpeg',
+    image:'/img11.webp',
     title:'Asesoramiento',
   },
   {
     id:5,
     icon: PackagePlus,
     color: "bg-gradient-to-t from-black to-red-800",
-    image: '/img8.jpeg',
+    image: '/img8.webp',
     title: 'Consolidacion de Cargas',
   },
   {
     id:6,
     icon: MapPin,
     color: "bg-gradient-to-t from-black to-skyblue-800",
-    image: '/img10.jpeg',
+    image: '/img10.webp',
     title: 'Monitoreo y Seguimiento',
   }
 ]
@@ -80,7 +80,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="relative bg-orange-950">
-        <div className="bg-[url(/img9.jpeg)] bg-fixed bg-norepeat bg-cover bg-center w-full h-full absolute opacity-30" />
+        <div className="bg-[url(/img9.webp)] bg-fixed bg-norepeat bg-cover bg-center w-full h-full absolute opacity-30" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
