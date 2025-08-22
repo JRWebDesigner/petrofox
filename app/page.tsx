@@ -5,7 +5,29 @@ import { ChevronLeft, ChevronRight, Truck, Shield, Clock, Users } from 'lucide-r
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-
+const services=[
+  {
+    id:1,
+    color:'red',
+    image:'/img2.jpeg',
+    title:'prueba',
+    description:'lorem ipsum asdasfm ajkdnasl '
+  },
+  {
+    id:2,
+    color:'blue',
+    image:'/img9.jpeg',
+    title:'prueba',
+    description:'lorem ipsum asdasfm ajkdnasl '
+  },
+  {
+    id:3,
+    color:'green',
+    image:'/img6.jpeg',
+    title:'prueba',
+    description:'lorem ipsum asdasfm ajkdnasl '
+  }
+]
 const features = [
   {
     icon: Shield,
@@ -34,25 +56,11 @@ export default function Home() {
     <div className="min-h-screen">
     
       <HeroCarousel />
-      
-      {/* Welcome Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Bienvenidos a <span className="text-orange-500">PETROFOX</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Somos líderes en transporte especializado de carga líquida con camiones sisterna. 
-              Con años de experiencia y una flota moderna, garantizamos servicios seguros y confiables.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-orange-950">
+        <div className="bg-[url(/img9.jpeg)] bg-fixed bg-norepeat bg-cover bg-center w-full h-full absolute opacity-30" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
@@ -70,46 +78,25 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-black mb-4">Nuestra Operación</h2>
-            <p className="text-lg text-gray-600">Conoce de cerca nuestras operaciones y flota de camiones</p>
+          <div className=" mb-12">
+            <h2 className="text-right text-4xl font-black mb-4 text-orange-700">Nuestros Servicios</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, id)=>(
+              <div key={id} className={`relative overflow-hidden shadow-lg group bg-${service.color}-950`}>
               <img 
-                src="https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
-                alt="Camión sisterna en operación"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                src={service.image} 
+                alt={service.title}
+                className={`w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 opacity-40`}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p className="text-white font-semibold">Camiones en Operación</p>
+              <div className={`absolute inset-0 bg-opacity-40 hover:scale-110 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center`}>
+                <h2 className="text-white font-semibold text-2xl uppercase">{service.title}</h2>
               </div>
             </div>
-            
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
-              <img 
-                src="https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
-                alt="Centro logístico"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p className="text-white font-semibold">Centro Logístico</p>
-              </div>
-            </div>
-            
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
-              <img 
-                src="https://images.pexels.com/photos/1095814/pexels-photo-1095814.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
-                alt="Flota de camiones"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p className="text-white font-semibold">Nuestra Flota</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

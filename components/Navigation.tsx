@@ -17,10 +17,10 @@ const Navigation = () => {
 
   return (
     <header>
-      <div  className="bg-orange-500 w-full p-2 flex justify-around items-center text-white text-2xl">
+      <div  className="bg-orange-500 w-full p-2 flex justify-around items-center text-white text-xl font-semibold">
         <span>+591 77777777</span>
-        <span>+591 77777777</span>
-        <span>+591 77777777</span>
+        <span>info@petrofox.com</span>
+        <span>La Paz, Bolivia</span>
       </div>
 
       <nav className="bg-white shadow-lg border-b-4 border-orange-500 p-3">
@@ -40,7 +40,7 @@ const Navigation = () => {
                       "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                       pathname === item.href
                         ? "bg-orange-500 text-white"
-                        : "text-gray-700 hover:bg-blue-100 hover:text-blue-800"
+                        : "text-gray-700 hover:bg-orange-100 hover:text-orange-800"
                     )}
                   >
                     {item.label}
