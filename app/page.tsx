@@ -1,31 +1,52 @@
 'use client';
 
 import HeroCarousel from '@/components/index/HeroCarousel'
-import { ChevronLeft, ChevronRight, Truck, Shield, Clock, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Truck, Shield, Clock, Users, PackageCheck, ShieldCheck, UserCheck, PackagePlus, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const services=[
   {
     id:1,
-    color:'red',
+    icon: Truck,
+    color: "bg-gradient-to-t from-black to-orange-800",
     image:'/img2.jpeg',
-    title:'prueba',
-    description:'lorem ipsum asdasfm ajkdnasl '
+    title:'Transporte Nacional',
   },
   {
     id:2,
-    color:'blue',
-    image:'/img9.jpeg',
-    title:'prueba',
-    description:'lorem ipsum asdasfm ajkdnasl '
+    icon: PackageCheck,
+    color: "bg-gradient-to-t from-black to-blue-800",
+    image: '/img9.jpeg',
+    title: 'Transporte Carga Especial',
   },
   {
     id:3,
-    color:'green',
-    image:'/img6.jpeg',
-    title:'prueba',
-    description:'lorem ipsum asdasfm ajkdnasl '
+    icon: ShieldCheck,
+    color: "bg-gradient-to-t from-black to-green-800",
+    image: '/img6.jpeg',
+    title: 'Seguro de Carga',
+  },
+  {
+    id:4,
+    icon: UserCheck,
+    color: "bg-gradient-to-t from-black to-violet-800",
+    image:'/img11.jpeg',
+    title:'Asesoramiento',
+  },
+  {
+    id:5,
+    icon: PackagePlus,
+    color: "bg-gradient-to-t from-black to-red-800",
+    image: '/img8.jpeg',
+    title: 'Consolidacion de Cargas',
+  },
+  {
+    id:6,
+    icon: MapPin,
+    color: "bg-gradient-to-t from-black to-skyblue-800",
+    image: '/img10.jpeg',
+    title: 'Monitoreo y Seguimiento',
   }
 ]
 const features = [
@@ -79,21 +100,22 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section className="py-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className=" mb-12">
-            <h2 className="text-right text-4xl font-black mb-4 text-orange-700">Nuestros Servicios</h2>
+            <h2 className="text-right text-4xl font-black mb-4 text-orange-700">Nuestros servicios de logística</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, id)=>(
-              <div key={id} className={`relative overflow-hidden shadow-lg group bg-${service.color}-950`}>
+              <div key={id} className={`relative overflow-hidden shadow-lg group ${service.color}`}>
               <img 
                 src={service.image} 
                 alt={service.title}
                 className={`w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 opacity-40`}
               />
-              <div className={`absolute inset-0 bg-opacity-40 hover:scale-110 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center`}>
-                <h2 className="text-white font-semibold text-2xl uppercase">{service.title}</h2>
+              <div className={`absolute inset-0 bg-opacity-40 hover:scale-110 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center`}>
+                <service.icon className="h-16 w-16 text-white"/>
+                <h2 className="text-white font-semibold text-xl uppercase text-center">{service.title}</h2>
               </div>
             </div>
             ))}

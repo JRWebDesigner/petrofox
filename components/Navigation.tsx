@@ -17,7 +17,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <div  className="bg-orange-500 w-full p-2 flex justify-around items-center text-white text-xl font-semibold">
+      <div  className="bg-orange-500 w-full p-2 flex justify-around items-center text-white text-lg">
         <span>+591 77777777</span>
         <span>info@petrofox.com</span>
         <span>La Paz, Bolivia</span>
