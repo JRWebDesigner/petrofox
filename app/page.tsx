@@ -1,7 +1,6 @@
 'use client';
 
 import HeroCarousel from '@/components/index/HeroCarousel'
-import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Truck, Shield, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -31,16 +30,6 @@ const features = [
 ];
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
-  };
-
   return (
     <div className="min-h-screen">
     
