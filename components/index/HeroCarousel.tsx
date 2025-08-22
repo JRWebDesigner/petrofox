@@ -43,12 +43,12 @@ export default function HeroCarousel(){
         <SwiperSlide key={index} className='relative h-full'>
             <img 
               src={item.image} 
-              alt={item.title}
+              alt={item.description}
               className="absolute h-full w-full object-cover object-center z-10"
             />
             <div className="relative bg-black/30 h-full flex items-center justify-start z-20">
               <div className="text-white max-w-4xl px-8 text-shadow-lg">
-                <h1 className="text-5xl font-black text-white text-shadow-[2px_100px_black]">Transporte y Logística <br/> de Carga en Bolivia</h1>
+                <h1 className="text-5xl font-black text-white text-shadow-[6px_30px_black]">Transporte y Logística <br/> de Carga en Bolivia</h1>
                 <p className="text-xl md:text-2xl">{item.description}</p>
               </div>
             </div>
