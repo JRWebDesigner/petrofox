@@ -4,7 +4,7 @@ import HeroCarousel from '@/components/index/HeroCarousel'
 import { Truck, Shield, Clock, Users, PackageCheck, ShieldCheck, UserCheck, PackagePlus, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 // Paleta: azul oscuro, azul claro, naranja, blanco, gris suave
 const services = [
@@ -73,19 +73,16 @@ const features = [
     title: 'Personal Especializado',
     description: 'Conductores y personal técnico altamente capacitados y certificados en transporte especializado.'
   }
-];
+};
 
+// Variants solo con objetos (no funciones)
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.7,
-      type: "spring"
-    }
-  })
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.7, type: "spring" } 
+  }
 };
 
 const fadeIn = {
@@ -101,7 +98,7 @@ export default function Home() {
       animate="visible"
       variants={fadeIn}
     >
-      <motion.div variants={fadeInUp} custom={0}>
+      <motion.div variants={fadeInUp}>
         <HeroCarousel />
       </motion.div>
 
@@ -114,14 +111,16 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } }
+            }}
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                custom={index}
                 whileHover={{ scale: 1.07, boxShadow: "0 8px 32px rgba(30,41,59,0.18)" }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300, delay: index * 0.1 }}
               >
                 <Card className="text-center bg-white/90 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 rounded-xl">
                   <CardContent className="p-6">
@@ -148,11 +147,13 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.13 } }
+          }}
         >
           <motion.div
             className="mb-12"
             variants={fadeInUp}
-            custom={0}
           >
             <h2 className="text-right text-4xl font-bold mb-4 text-orange-400 drop-shadow-lg">Nuestros servicios de logística</h2>
           </motion.div>
@@ -163,14 +164,20 @@ export default function Home() {
                 key={id}
                 className={`relative overflow-hidden shadow-xl group ${service.color} rounded-2xl border-2 border-white/10`}
                 variants={fadeInUp}
-                custom={id}
                 whileHover={{ scale: 1.04, rotate: 1 }}
-                transition={{ type: "spring", stiffness: 200 }}
+                transition={{ type: "spring", stiffness: 200, delay: id * 0.1 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <motion.img 
                   src={service.image} 
                   alt={service.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 opacity-40"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.7, type: "spring" }}
                   whileHover={{ scale: 1.12, opacity: 0.5 }}
                 />
                 <motion.div
