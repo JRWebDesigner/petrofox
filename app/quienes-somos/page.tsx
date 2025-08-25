@@ -2,7 +2,7 @@
 import { Users, Award, Globe, Truck } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'motion/react';
-
+//rossy te amo
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
