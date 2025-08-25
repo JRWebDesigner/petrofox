@@ -4,7 +4,7 @@ import HeroCarousel from '@/components/index/HeroCarousel'
 import { Truck, Shield, Clock, Users, PackageCheck, ShieldCheck, UserCheck, PackagePlus, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 // Paleta: azul oscuro, azul claro, naranja, blanco, gris suave
 const services = [
