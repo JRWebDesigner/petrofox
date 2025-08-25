@@ -13,9 +13,9 @@ const Navigation = () => {
 
   const navItems = [
     { href: '/', label: 'Inicio' },
-    { href: '/momento', label: 'Quiénes Somos' },
-    { href: '/momento', label: 'Servicios' },
-    { href: '/momento', label: 'Contactos' },
+    { href: '/quienes-somos', label: 'Quiénes Somos' },
+    { href: '/servicios', label: 'Servicios' },
+    { href: '/contactos', label: 'Contactos' },
   ];
 
   useEffect(() => {

@@ -8,7 +8,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: 'Teléfono',
-    details: ['+1 (555) 123-4567', '+1 (555) 765-4321'],
+    details: ['+591 77777777', '+591 88888888'],
     description: 'Disponible 24/7 para emergencias'
   },
   {
@@ -20,7 +20,7 @@ const contactMethods = [
   {
     icon: MapPin,
     title: 'Oficina Principal',
-    details: ['Av. Industrial 1234', 'Zona Logística Norte'],
+    details: ['Av. Industrial 1234', 'Zona Logística'],
     description: 'Lunes a Viernes: 8:00 - 18:00'
   },
   {
@@ -31,11 +31,11 @@ const contactMethods = [
   }
 ];
 
-const offices = [
+/*const offices = [
   {
     city: 'Sede Principal',
     address: 'Av. Industrial 1234, Zona Logística Norte',
-    phone: '+1 (555) 123-4567',
+    phone: '+591 77777777',
     email: 'principal@petrofox.com',
     image: 'https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1'
   },
@@ -54,6 +54,7 @@ const offices = [
     image: 'https://images.pexels.com/photos/1051747/pexels-photo-1051747.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1'
   }
 ];
+*/
 
 export default function Contactos() {
   return (
@@ -151,25 +152,12 @@ export default function Contactos() {
                     </label>
                     <Input 
                       type="tel" 
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+591 66666666"
                       className="w-full"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Tipo de Servicio
-                  </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                    <option>Selecciona un servicio</option>
-                    <option>Transporte de Combustibles</option>
-                    <option>Productos Químicos Industriales</option>
-                    <option>Líquidos Alimentarios</option>
-                    <option>Aceites y Lubricantes</option>
-                    <option>Consulta General</option>
-                  </select>
-                </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -237,7 +225,7 @@ export default function Contactos() {
         </div>
       </section>
 
-      {/* Offices */}
+      {/* Offices 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -274,29 +262,8 @@ export default function Contactos() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Emergency Contact */}
-      <section className="py-16 bg-red-50 border-l-4 border-red-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-red-800 mb-4">Contacto de Emergencia</h2>
-            <p className="text-lg text-red-700 mb-6">
-              Para situaciones de emergencia durante el transporte, contáctanos inmediatamente
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="bg-red-500 text-white p-4 rounded-lg">
-                <Phone className="h-6 w-6 inline mr-2" />
-                <span className="text-xl font-bold">+1 (555) 911-EMER</span>
-              </div>
-              <div className="bg-red-500 text-white p-4 rounded-lg">
-                <Mail className="h-6 w-6 inline mr-2" />
-                <span className="text-xl font-bold">emergencias@petrofox.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
