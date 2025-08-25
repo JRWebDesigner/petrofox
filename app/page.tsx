@@ -73,7 +73,7 @@ const features = [
     title: 'Personal Especializado',
     description: 'Conductores y personal técnico altamente capacitados y certificados en transporte especializado.'
   }
-};
+];
 
 // Variants solo con objetos (no funciones)
 const fadeInUp = {
